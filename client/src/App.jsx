@@ -1,35 +1,80 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import {BrowserRouter , Routes , Route, useNavigate} from 'react-router-dom';
+import { Dashboard } from "./components/Dashboard";
+import HomeLanding from "./components/HomeLanding";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import VerifyOtp from "./pages/VerifyOpt";
+import ChangePassword from "./pages/ChangePassword";
+import { useAuthStore } from "./store/useAuthStore";
+import { Toaster } from "react-hot-toast";
+import SignupRoute from "./pages/SignupRoute";
+import { Loader } from "lucide-react";
+import { Navigate } from "react-router-dom";
+import Profile from "./pages/Profile";
+import Navbar from "./components/Navbar";
+import Post from "./components/Post";
+import CreatePost from "./components/CreatePost";
+
+import { initFlowbite } from 'flowbite';
+import { Home } from "./pages/Home";
+import { Contacts } from "./pages/Contacts";
+import Emergency from "./pages/Emergency";
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+   const {authUser , checkAuth , isCheckingAuth} = useAuthStore()
+
+
+  useEffect(() => {
+    checkAuth()
+    initFlowbite();
+  } , [checkAuth])
+
+  console.log({authUser})
+  if(isCheckingAuth && !authUser) {
+    return (
+      <div className='flex items-center justify-center h-screen'>
+        <Loader  className='size-10 animate-spin'/>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    )
+  }
+ 
+ 
+
+  return (<>
+   
+    
+   
+          
+        
+   
+    
+      <BrowserRouter>
+       <Navbar/>
+      
+     
+ 
+      <Routes>
+        <Route path="/signup" element={authUser ? <Navigate to="/home" /> :  <SignupRoute/>} />
+        <Route path="/" element={<HomeLanding/>}/>
+        <Route path="/signin" element={authUser ? <Navigate to="/home" /> :  <SignIn/>} />
+        <Route path="/home" element={authUser ?   <Home/>: <Navigate to="/signin" />} />
+        <Route path="/profile" element={authUser ?   <Profile/>: <Navigate to="/signin" />} />
+        <Route path="/contacts" element={authUser ?   <Contacts/>: <Navigate to="/signin" />} />
+        <Route path="/emergency" element={authUser ?   <Emergency/>: <Navigate to="/signin" />} />
+
+      </Routes>
+    </BrowserRouter> 
+    <Toaster />
+    </>)
+  
 }
 
 export default App
