@@ -24,6 +24,7 @@ import { initFlowbite } from 'flowbite';
 import { Home } from "./pages/Home";
 import { Contacts } from "./pages/Contacts";
 import Emergency from "./pages/Emergency";
+import ProfilePage from "./components/ProfilePage";
 
 
 
@@ -62,11 +63,12 @@ function App() {
      
  
       <Routes>
-        <Route path="/signup" element={authUser ? <Navigate to="/home" /> :  <SignupRoute/>} />
+        <Route path="/signup" element={authUser ? <Navigate to="/home" /> :  <SignUp/>} />
         <Route path="/" element={<HomeLanding/>}/>
+        <Route path="/profile" element={<ProfilePage/>}/>
         <Route path="/signin" element={authUser ? <Navigate to="/home" /> :  <SignIn/>} />
         <Route path="/home" element={authUser ?   <Home/>: <Navigate to="/signin" />} />
-        <Route path="/profile" element={authUser ?   <Profile/>: <Navigate to="/signin" />} />
+     {/* //   <Route path="/profile" element={authUser ?   <ProfilePage/>: <Navigate to="/signin" />} /> */}
         <Route path="/contacts" element={authUser ?   <Contacts/>: <Navigate to="/signin" />} />
         <Route path="/emergency" element={authUser ?   <Emergency/>: <Navigate to="/signin" />} />
 

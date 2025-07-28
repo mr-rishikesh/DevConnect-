@@ -99,10 +99,10 @@ import {create} from "zustand"
             set({isSigningUp : true})
             console.log(data)
             const res = await axiosInstance.post("/auth/signup" , data);
-            toast.success("Sent Otp");
-           // set({authUser : true})
-            set({navigateToOtp : true})
-            set({email : data.email})
+            toast.success("Successfully SignUp");
+            const { checkAuth }= get();
+            await checkAuth();
+
             
 
             

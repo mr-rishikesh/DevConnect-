@@ -63,7 +63,7 @@ export default function CreatePost() {
           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none  w-full sm:w-auto px-40 py-1.5 text-center "
           type="button"
         >
-          Toggle modal
+          Create a Post
         </button>
       </div>
 
