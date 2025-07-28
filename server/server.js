@@ -16,10 +16,23 @@ app.use(express.static("public"));
 import cookieParser from 'cookie-parser';
 app.use(cookieParser());
 
+
+const allowedOrigins = ['http://localhost:5173', 'https://dev-connect-lemon-pi.vercel.app/'];
+
 app.use(cors({
-  origin: "http://localhost:5173",   // frontend origin
-  credentials: true,                 // allow credentials (cookies, auth headers)
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true // allow cookies or headers
 }));
+// app.use(cors({
+//   origin: "http://localhost:5173",   // frontend origin
+//   credentials: true,                 // allow credentials (cookies, auth headers)
+// }));
 
 connectDB();
 
