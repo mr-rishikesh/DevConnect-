@@ -45,33 +45,7 @@ import {create} from "zustand"
     },
 
 
-   verifyotp : async (otp) => {
-    set({isVerifyingOtp : true});
-       try {
-    
-        const {email} = get();
-        if(email === "" ) return toast.error("Signin again")
-        const res = await axiosInstance.post("/auth/verify-otp"  , {otp , email})
-        toast.success("Sucessfully Sign Up");
-        const { checkAuth }= get();
-         await checkAuth();
-      
-      
-        
-        // set({authUser : res.data})
-      
-         
-        
-       } catch (error) {
-        console.log(error)
-        toast.error("Something Wrong in veryotp")
-        
-       } finally {
-         set({isVerifyingOtp : false});
-         
-       }
 
-   } ,
 
    checkAuth : async() => {
     try {
@@ -94,7 +68,7 @@ import {create} from "zustand"
 
     signup : async (data) => {
          
-      
+
          try {
             set({isSigningUp : true})
             console.log(data)

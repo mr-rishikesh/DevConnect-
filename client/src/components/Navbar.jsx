@@ -34,7 +34,7 @@ const Navbar = () => {
               >
                 <span className="sr-only">Open user menu</span>
                 <img
-                  className="w-8 h-8 rounded-full"
+                  className="w-8 h-8 rounded-full "
                   src="https://avatars.githubusercontent.com/u/160262729?s=400&u=83e2a3ca3271123911fde25094ec5faf9d6c9a2e&v=4"
                   alt="user"
                 />
@@ -123,7 +123,7 @@ const Navbar = () => {
   } w-full md:flex md:w-auto md:order-1 md:ml-auto`}
   id="navbar-user"
 >
-  <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+  <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 mr-11">
 
             {[
               { to: "/home", label: "Home" },
@@ -131,7 +131,7 @@ const Navbar = () => {
            //   { to: "/services", label: "Services" },
              
               { to: "/messages", label: "Messages" }, 
-              { to: "/about", label: "About & Contact Us" },
+              { to: "/about", label: "About" },
             ].map(({ to, label }) => (
               <li key={to}>
                 <NavLink

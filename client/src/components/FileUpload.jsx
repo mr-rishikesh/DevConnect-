@@ -5,12 +5,7 @@ export default function FileUpload({setImagePreview , imagePreview}) {
   
   const fileInputRef = useRef(null);
 
-//   const handleFileChange = (e) => {
-//     const file = e.target.files[0];
-//     setImage(file);
-//     console.log(file + file.type)
-//     setPreview(URL.createObjectURL(file)); // generate preview URL
-//   };
+
     const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (!file.type.startsWith("image/")) {

@@ -17,7 +17,7 @@ import cookieParser from 'cookie-parser';
 app.use(cookieParser());
 
 
-const allowedOrigins = ['http://localhost:5173', 'https://dev-connect-lemon-pi.vercel.app/'];
+const allowedOrigins = ['http://localhost:5173', 'https://dev-connect-lemon-pi.vercel.app'];
 
 app.use(cors({
   origin: function (origin, callback) {
@@ -40,6 +40,11 @@ connectDB();
 app.use("/auth" , authRouter)
 app.use("/report" , reportRouter)
 app.use("/post" , postRouter)
+app.get("/" , (req , res) => {
+  res.status(200).json({
+    message : "Server is running perfectly"
+  })
+})
 app.listen(3000 , ()=> {
     console.log("server is listening at port 3000")
 })

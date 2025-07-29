@@ -4,15 +4,15 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import {BrowserRouter , Routes , Route, useNavigate} from 'react-router-dom';
-import { Dashboard } from "./components/Dashboard";
+
 import HomeLanding from "./components/HomeLanding";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
-import VerifyOtp from "./pages/VerifyOpt";
-import ChangePassword from "./pages/ChangePassword";
+
+
 import { useAuthStore } from "./store/useAuthStore";
 import { Toaster } from "react-hot-toast";
-import SignupRoute from "./pages/SignupRoute";
+
 import { Loader } from "lucide-react";
 import { Navigate } from "react-router-dom";
 import Profile from "./pages/Profile";
