@@ -8,6 +8,7 @@ import {BrowserRouter , Routes , Route, useNavigate} from 'react-router-dom';
 import HomeLanding from "./components/HomeLanding";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import MessagePage from "./pages/MessagePage";
 
 
 import { useAuthStore } from "./store/useAuthStore";
@@ -67,6 +68,7 @@ function App() {
         <Route path="/" element={<HomeLanding/>}/>
         <Route path="/profile" element={<ProfilePage/>}/>
         <Route path="/signin" element={authUser ? <Navigate to="/home" /> :  <SignIn/>} />
+        <Route path="/messages" element={authUser ? <MessagePage /> : <Navigate to="/signin" />} />
         <Route path="/home" element={authUser ?   <Home/>: <Navigate to="/signin" />} />
      {/* //   <Route path="/profile" element={authUser ?   <ProfilePage/>: <Navigate to="/signin" />} /> */}
         <Route path="/contacts" element={authUser ?   <Contacts/>: <Navigate to="/signin" />} />
