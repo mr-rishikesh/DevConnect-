@@ -6,7 +6,11 @@ export default {
    "./node_modules/flowbite/**/*.js",
     "./node_modules/flowbite-react/**/*.js"],
   theme: {
-    extend: {},
+    extend: {
+        fontFamily: {
+        'root-heading': 'var(--root-font-family-headings)',
+      },
+    },
   },
   plugins: [flowbite],
 }

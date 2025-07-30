@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import {BrowserRouter , Routes , Route, useNavigate} from 'react-router-dom';
 
@@ -25,7 +23,7 @@ import { Home } from "./pages/Home";
 import { Contacts } from "./pages/Contacts";
 import Emergency from "./pages/Emergency";
 import ProfilePage from "./components/ProfilePage";
-
+import About from "./pages/About";
 
 
 function App() {
@@ -66,6 +64,7 @@ function App() {
         <Route path="/signup" element={authUser ? <Navigate to="/home" /> :  <SignUp/>} />
         <Route path="/" element={<HomeLanding/>}/>
         <Route path="/profile" element={<ProfilePage/>}/>
+        <Route path="/about" element={<About/>}/>
         <Route path="/signin" element={authUser ? <Navigate to="/home" /> :  <SignIn/>} />
         <Route path="/home" element={authUser ?   <Home/>: <Navigate to="/signin" />} />
      {/* //   <Route path="/profile" element={authUser ?   <ProfilePage/>: <Navigate to="/signin" />} /> */}
