@@ -12,7 +12,7 @@ const Navbar = () => {
   const toggleMobileMenu = () => setMobileOpen(!isMobileOpen);
 
   return (
-    <nav className="bg-white dark:bg-gray-900 border-b-5 border-b  border-gray-400 ">
+    <nav className="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b-5 border-b  border-gray-400 ">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img
