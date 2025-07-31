@@ -5,6 +5,8 @@ import authRouter from "./routes/authRoutes.js";
 import connectDB from "./lib/db.js";
 import reportRouter from "./routes/report.route.js";
 import postRouter from "./routes/post.route.js";
+import projectRouter from "./routes/projectRoutes.js";
+
 dotenv.config();
 
 const app = express();
@@ -40,6 +42,8 @@ connectDB();
 app.use("/auth" , authRouter)
 app.use("/report" , reportRouter)
 app.use("/post" , postRouter)
+app.use("/api/projects", projectRouter);
+
 app.get("/" , (req , res) => {
   res.status(200).json({
     message : "Server is running perfectly"

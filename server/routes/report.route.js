@@ -1,4 +1,4 @@
-import { getReports, uploadReportController } from "../controller/report.controller.js";
+import { getReports, uploadReportController } from "../controllers/report.controller.js";
 import { protectRoute } from "../middleware/auth.middleware.js";
 import express from "express"
 

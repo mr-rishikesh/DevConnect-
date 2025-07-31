@@ -1,4 +1,4 @@
-import { checkAuth, signUp, signin} from "../controller/auth.controller.js";
+import { checkAuth, signUp, signin} from "../controllers/auth.controller.js";
 
 import express from "express";
 import { protectRoute } from "../middleware/auth.middleware.js";
