@@ -71,7 +71,7 @@ function App() {
         <Route path="/home" element={authUser ?   <Home/>: <Navigate to="/signin" />} />
      {/* //   <Route path="/profile" element={authUser ?   <ProfilePage/>: <Navigate to="/signin" />} /> */}
         <Route path="/contacts" element={authUser ?   <Contacts/>: <Navigate to="/signin" />} />
-        <Route path="/emergency" element={authUser ?   <Emergency/>: <Navigate to="/signin" />} />
+       
 
       </Routes>
     </BrowserRouter> 
