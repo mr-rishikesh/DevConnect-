@@ -1,5 +1,5 @@
 import express from "express"
-import { createPost, feed, myPosts , likePost } from "../controller/post.controller.js";
+import { createPost, feed, myPosts , likePost } from "../controllers/post.controller.js";
 import { protectRoute } from "../middleware/auth.middleware.js";
 
 

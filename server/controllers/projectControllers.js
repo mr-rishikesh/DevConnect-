@@ -1,9 +1,10 @@
 // server/controllers/projectController.js
 
-const Project = require('../model/Project');
-const { getPagination } = require('../utilise/pagination');
+import Project from '../model/Project.js';
+import { getPagination } from '../utilise/pagination.js';
 
-const getAllProjects = async (req, res) => {
+// GET /api/projects
+export const getAllProjects = async (req, res) => {
   try {
     const { page, limit, skip } = getPagination(req.query);
 
@@ -29,6 +30,14 @@ const getAllProjects = async (req, res) => {
   }
 };
 
-module.exports = {
-  getAllProjects
+// POST /api/projects
+export const createProject = async (req, res) => {
+  try {
+    const project = new Project(req.body);
+    const saved = await project.save();
+    res.status(201).json(saved);
+  } catch (err) {
+    console.error('Error creating project:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 };
