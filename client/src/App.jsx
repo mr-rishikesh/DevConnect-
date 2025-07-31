@@ -72,7 +72,6 @@ function App() {
      {/* //   <Route path="/profile" element={authUser ?   <ProfilePage/>: <Navigate to="/signin" />} /> */}
         <Route path="/contacts" element={authUser ?   <Contacts/>: <Navigate to="/signin" />} />
        
-
       </Routes>
     </BrowserRouter> 
     <Toaster />

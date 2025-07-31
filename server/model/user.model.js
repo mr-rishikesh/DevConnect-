@@ -1,5 +1,16 @@
 import mongoose  from "mongoose";
 
+const experienceSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  description: String,
+  startDate: { type: Date, required: true },
+  
+  companey : {
+    type : String ,
+    
+  },
+  endDate: Date
+}); 
 
 const userSchema = new  mongoose.Schema({
     email : {
@@ -31,12 +42,24 @@ const userSchema = new  mongoose.Schema({
         type : String ,
         default: ""
     } ,
+    portfolio : {
+        type : String ,
+        default: ""
+    } ,
+    resume : {
+        type : String ,
+        default: ""
+    } ,
 
 
-    interests : {
+    techStack : {
        type :  [String] ,
        default : ["full stack", "developer","frontend"]
     } , 
+    experience: { type: [experienceSchema], default: [] }
+
+
+
 
    
 
