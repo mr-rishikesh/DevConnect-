@@ -9,6 +9,7 @@ import bcrypt from "bcrypt";
 
 export const signUp = async (req, res) => {
   const {email, fullName, githubUrl,  password } = req.body;
+  console.log(email)
 
  
 

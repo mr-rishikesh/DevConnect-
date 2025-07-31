@@ -27,7 +27,7 @@ const projectSchema = new mongoose.Schema(
     },
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Developer',
+      ref: 'User',
       required: true
     }
   },

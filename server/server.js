@@ -16,6 +16,7 @@ app.use(express.json({ limit: '10mb' }));
 
 app.use(express.static("public"));
 import cookieParser from 'cookie-parser';
+import updateProfileRoute from "./routes/updateProfileRoute.js";
 app.use(cookieParser());
 
 
@@ -43,6 +44,7 @@ app.use("/auth" , authRouter)
 app.use("/report" , reportRouter)
 app.use("/post" , postRouter)
 app.use("/api/projects", projectRouter);
+app.use("/users" , updateProfileRoute);
 
 app.get("/" , (req , res) => {
   res.status(200).json({
