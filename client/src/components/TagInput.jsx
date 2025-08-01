@@ -26,7 +26,7 @@ export default function TagInput({onInputChange , tags , setTags}) {
   return (
     <div className="w-full max-w-lg p-4  rounded-lg shadow-md bg-gray-100  border-gray-300 dark:bg-gray-700">
       <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-        Health Tags
+       Tech Stack / Skill 
       </label>
 
       <div className="flex flex-wrap items-center gap-2 ">
@@ -66,7 +66,7 @@ export default function TagInput({onInputChange , tags , setTags}) {
         <input
           type="text"
           className="flex-1 outline-none border-gray-400  bg-transparent text-sm px-2 py-1 dark:text-white"
-          placeholder="eg: Diabetes, Anxiety, Women's Health,covid-19 ..."
+          placeholder="eg: Full Stack, Block Chain, AI-ML ..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}

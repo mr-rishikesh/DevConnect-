@@ -73,9 +73,9 @@ let poster =  getUserById(post.posterId);
     <main className="pt-4 pb-8 lg:pt-2 lg:pb-1 bg-white dark:bg-gray-900 antialiased">
       <div className="flex justify-between px-4 mx-auto max-w-screen-xl">
         <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
-          <header className="mb-4 lg:mb-6 not-format">
+          <header className="mb-1 lg:mb-1 not-format">
             <address className="flex items-center mb-6 not-italic">
-              <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+              <div className="  inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
                 <img
                   className="mr-4 w-16 h-16 rounded-full"
                   src= { poster.profilePic !== "" ? poster.profilePic  : "https://freesvg.org/img/abstract-user-flat-4.png" }
@@ -89,7 +89,7 @@ let poster =  getUserById(post.posterId);
                    {poster.fullName}
                   </a>
                   <p className="text-base text-gray-500 dark:text-gray-400">
-                    Health Consultant
+                   {poster.title}
                   </p>
                   <p className="text-base text-gray-500 dark:text-gray-400">
                     <time
@@ -103,9 +103,9 @@ let poster =  getUserById(post.posterId);
                 </div>
               </div>
             </address>
-            <h6 className=" leading-tight text-gray-900 lg:mb-6 lg:text-2xl dark:text-white">
+            <h className="font-semibold leading-tight text-gray-900 lg:mb-6 lg:text-1xl dark:text-white">
              {post.title}
-            </h6>
+            </h>
           </header>
 
           <p className="lead text-gray-900  dark:text-white">

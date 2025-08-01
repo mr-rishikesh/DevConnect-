@@ -127,7 +127,7 @@ const Navbar = () => {
 
             {[
               { to: "/home", label: "Home" },
-              { to: "/contribute", label: "Contribute" },
+              { to: "/explore", label: "Explore" },
            //   { to: "/services", label: "Services" },
              
               { to: "/messages", label: "Messages" }, 

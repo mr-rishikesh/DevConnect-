@@ -21,7 +21,7 @@ import CreatePost from "./components/CreatePost";
 
 import { initFlowbite } from 'flowbite';
 import { Home } from "./pages/Home";
-import { Contacts } from "./pages/Contacts";
+import  Explore  from "./pages/Explore";
 import Emergency from "./pages/Emergency";
 import ProfilePage from "./components/ProfilePage";
 import About from "./pages/About";
@@ -70,7 +70,7 @@ function App() {
         <Route path="/messages" element={authUser ? <MessagePage /> : <Navigate to="/signin" />} />
         <Route path="/home" element={authUser ?   <Home/>: <Navigate to="/signin" />} />
      {/* //   <Route path="/profile" element={authUser ?   <ProfilePage/>: <Navigate to="/signin" />} /> */}
-        <Route path="/contacts" element={authUser ?   <Contacts/>: <Navigate to="/signin" />} />
+        <Route path="/explore" element={authUser ?   <Explore/>: <Navigate to="/signin" />} />
        
       </Routes>
     </BrowserRouter> 
