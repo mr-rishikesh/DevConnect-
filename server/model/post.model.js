@@ -14,7 +14,7 @@ const postSchema = mongoose.Schema({
     } , 
     title : {
         type : String ,
-        default : "Report "
+        default : ""
     } ,
     description : {
         type : String ,

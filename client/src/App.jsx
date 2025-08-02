@@ -22,7 +22,7 @@ import CreatePost from "./components/CreatePost";
 import { initFlowbite } from 'flowbite';
 import { Home } from "./pages/Home";
 import  Explore  from "./pages/Explore";
-import Emergency from "./pages/Emergency";
+
 import ProfilePage from "./components/ProfilePage";
 import About from "./pages/About";
 

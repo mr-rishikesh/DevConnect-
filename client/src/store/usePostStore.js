@@ -2,12 +2,24 @@
 import toast from "react-hot-toast"
 import { axiosInstance } from "../lib/axios"
 import {create} from "zustand"
+import { useAuthStore } from "./useAuthStore";
 
  export const usePostStore = create((set , get ) => ( {
     feedPosts : null,
     likedPost : [],
     
     myPosts: null , 
+
+    handleFollow : async (followeeId) => {
+           try {
+                   const authUser = useAuthStore.getState().authUser;
+                   const res = await axiosInstance.post(`/users/follow/${authUser._id}/${followeeId}`);
+                   toast.success("Followed")
+           } catch (error) {
+                console.log(error)
+                toast.error(error.message)
+           }
+    },
 
     likePost : async (data) => {
 //           const { postId } = data;
