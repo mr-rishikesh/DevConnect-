@@ -32,7 +32,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copyright*/}
+      {/* Copyright segment */}
       <div className="text-center text-gray-500 text-sm mt-6 border-t border-gray-700 pt-4">
         &copy; {new Date().getFullYear()} DevConnect. All rights reserved.
       </div>

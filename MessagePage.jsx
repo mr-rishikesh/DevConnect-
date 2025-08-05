@@ -113,6 +113,7 @@ export default function MessagePage() {
           </div>
         )}
       </main>
+      {/* Footer */}
       <Footer/>
     </div>
   );

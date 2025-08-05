@@ -121,6 +121,7 @@ const About = () => {
           Get Started Free
         </Link>
       </section>
+      {/* Footer */}
       <Footer/>
     </div>
   );
