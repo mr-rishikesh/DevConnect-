@@ -110,7 +110,7 @@ const About = () => {
     
       </div>
 
-      {/*footer*/}
+      {/* footer */}
       <section className="bg-blue-500 text-white text-center py-20 px-6">
         <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to build your dev network?</h2>
         <p className="mb-6 text-lg">Join DevConnect today and never code alone again.</p>

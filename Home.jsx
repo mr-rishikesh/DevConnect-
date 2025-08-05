@@ -23,7 +23,7 @@ export function Home()  {
                 <Post  post={post}/>
             )})
         }
-
+        {/* Footer section */}
         <Footer/>
 
         </>

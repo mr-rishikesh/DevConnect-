@@ -23,7 +23,7 @@ const Explore = () => {
         </ul>
    
 
-
+        {/* Footer */}
         <Footer/>
       </div></>
   )

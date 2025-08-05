@@ -128,7 +128,7 @@ export default function Profile() {
           </ul>
         </div>
       </div>
-      {/* Footer */}
+      {/* Footer section */}
       <Footer/>
     </div>
   );
