@@ -18,7 +18,7 @@ const Footer = () => {
           <a href="/explore" className="hover:text-green-400 transition">Explore</a>
           <a href="/messages" className="hover:text-green-400 transition">Messages</a>
           <a href="/about" className="hover:text-green-400 transition">About</a>
-          <a href="/privacyTerms" className="hover:text-green-400 transition">Privacy & Terms</a>
+          <a href="/privacyTerms" className="hover:text-green-400 transition">Privacy Policy</a>
         </div>
 
         {/* Social Media Icons */}
