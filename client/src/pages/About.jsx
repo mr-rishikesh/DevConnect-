@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-
+import Footer from "./Footer";
 
 const About = () => {
   return (
@@ -68,6 +68,7 @@ const About = () => {
         ))}
       </div>
 
+      {/* Featues */}
       <div className='place-items-center grid sm:grid-rows-2 sm:grid-cols-1 md:grid-cols-2 md:grid-rows-1 lg:grid-rows-1 lg:grid-cols-2 gap-7 bg-blue-100 w-screen lg:pb-16 pb-8 pt-8'>
         <div className='lg:ml-10 md:ml-10 md:mr-10'>
             <h2 className='text-center hover:text-amber-500 tracking-wide font-root-heading text-blue-600 font-extrabold lg:text-5xl sm:text-3xl sm:pt-5 md:pt-5 md:text-4xl pt-4 pb-10'>Why DevConnect?</h2>
@@ -109,8 +110,8 @@ const About = () => {
     
       </div>
 
-      {/*footer*/}
-      <section className="bg-blue-600 text-white text-center py-20 px-6">
+      {/* footer */}
+      <section className="bg-blue-500 text-white text-center py-20 px-6">
         <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to build your dev network?</h2>
         <p className="mb-6 text-lg">Join DevConnect today and never code alone again.</p>
         <Link
@@ -120,6 +121,8 @@ const About = () => {
           Get Started Free
         </Link>
       </section>
+      {/* Footer section */}
+      <Footer/>
     </div>
   );
 };

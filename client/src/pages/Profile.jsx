@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
-import profileImage from "../assets/like-button-icon.webp"
+import profileImage from "../assets/like-button-icon.webp";
+import Footer from "./Footer"; 
 
 export default function Profile() {
   const [openSettings, setOpenSettings] = useState(false);
@@ -103,7 +104,7 @@ export default function Profile() {
               <span className="font-bold w-32">Full name:</span>
               <span className="text-gray-700">{authUser.fullName}</span>
             </li>
-             <li className="flex border-b py-2">
+            <li className="flex border-b py-2">
               <span className="font-bold w-32">Email:</span>
               <span className="text-gray-700">{authUser.email}</span>
             </li>
@@ -127,6 +128,9 @@ export default function Profile() {
           </ul>
         </div>
       </div>
+      {/* Footer sect */}
+      <Footer/>
     </div>
   );
 }
+

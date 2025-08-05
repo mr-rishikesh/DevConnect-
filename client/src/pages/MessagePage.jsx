@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FiSend, FiPaperclip, FiSmile, FiArrowLeft } from "react-icons/fi";
+import Footer from "./Footer";
 
 const dummyUsers = [
   {
@@ -112,6 +113,8 @@ export default function MessagePage() {
           </div>
         )}
       </main>
+      {/* Footer */}
+      <Footer/>
     </div>
   );
 }
