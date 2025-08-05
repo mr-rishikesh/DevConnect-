@@ -68,6 +68,7 @@ const About = () => {
         ))}
       </div>
 
+      {/* Featues */}
       <div className='place-items-center grid sm:grid-rows-2 sm:grid-cols-1 md:grid-cols-2 md:grid-rows-1 lg:grid-rows-1 lg:grid-cols-2 gap-7 bg-blue-100 w-screen lg:pb-16 pb-8 pt-8'>
         <div className='lg:ml-10 md:ml-10 md:mr-10'>
             <h2 className='text-center hover:text-amber-500 tracking-wide font-root-heading text-blue-600 font-extrabold lg:text-5xl sm:text-3xl sm:pt-5 md:pt-5 md:text-4xl pt-4 pb-10'>Why DevConnect?</h2>

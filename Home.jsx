@@ -21,10 +21,7 @@ export function Home()  {
         {feedPosts && feedPosts.map((post) => {
             return (
                 <Post  post={post}/>
-            )
-        })
-        
-        
+            )})
         }
 
         <Footer/>
