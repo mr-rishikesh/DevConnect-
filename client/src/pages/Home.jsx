@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { usePostStore } from "../store/usePostStore.js"
 import CreatePost from "../components/CreatePost.jsx";
 import Post from "../components/Post.jsx";
-
+import Footer from "./Footer.jsx";
 
 export function Home()  {
     const {getFeedPosts , feedPosts} = usePostStore();
@@ -26,7 +26,7 @@ export function Home()  {
         
         }
 
-        
+        <footer/>
 
         </>
     )
