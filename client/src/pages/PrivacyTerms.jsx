@@ -115,7 +115,7 @@ const PrivacyTerms = () => {
                 </div>
             </div>
         </div>
-        <Footer/>
+     
     </div>
 
   );

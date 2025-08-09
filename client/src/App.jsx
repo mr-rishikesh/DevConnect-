@@ -25,6 +25,7 @@ import  Explore  from "./pages/Explore";
 import PrivacyTerms from "./pages/PrivacyTerms";
 import ProfilePage from "./components/ProfilePage";
 import About from "./pages/About";
+import Footer from "./pages/Footer";
 
 
 function App() {
@@ -72,9 +73,11 @@ function App() {
         <Route path="/home" element={authUser ?   <Home/>: <Navigate to="/signin" />} />
      {/* //   <Route path="/profile" element={authUser ?   <ProfilePage/>: <Navigate to="/signin" />} /> */}
         <Route path="/explore" element={authUser ?   <Explore/>: <Navigate to="/signin" />} />
+        
        
       </Routes>
     </BrowserRouter> 
+    <Footer/>
     <Toaster />
     </>)
   
