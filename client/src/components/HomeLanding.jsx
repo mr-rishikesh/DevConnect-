@@ -55,22 +55,25 @@ const HomeLanding = () => {
 
   const testimonials = [
     {
-      quote: "DevConnect helped me find my dream team for a hackathon. We won second place! 🏆",
+      quote: "DevConnect helped me find my dream team for a hackathon. We won second place!",
       author: "Alex Chen",
       role: "Full Stack Developer",
-      img: 1
+      img: 8,
+      rating: 5,
     },
     {
       quote: "The knowledge sharing here is incredible. I've learned so much from the community.",
       author: "Priya Patel",
       role: "Frontend Engineer",
-      img: 2
+      img: 9,
+      rating: 4,
     },
     {
-      quote: "Landed my first tech job through connections I made on DevConnect. Forever grateful! 🙏",
+      quote: "Landed my first tech job through connections I made on DevConnect. Forever grateful!",
       author: "Jamal Williams",
       role: "Junior Developer",
-      img: 3
+      img: 3,
+      rating: 5,
     }
   ]
 
@@ -120,9 +123,9 @@ const HomeLanding = () => {
             return (
               <div
                 key={i}
-                className="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border-2 border-gray-100 hover:border-violet-200 hover:ring-1 hover:ring-violet-200 hover:ring-opacity-50"
+                className="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border-2 border-gray-100 hover:border-indigo-200 hover:ring-1 hover:ring-indigo-100"
               >
-                <div className={`w-14 h-14 mb-6 rounded-xl flex items-center justify-center text-2xl`}>
+                <div className="w-14 h-14 mb-6 rounded-xl flex items-center justify-center text-2xl bg-indigo-50 text-indigo-600">
                   {f.icon}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{f.title}</h3>
@@ -134,12 +137,12 @@ const HomeLanding = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-white text-center">
+      <section className="py-20 bg-gray-50 text-center">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-gray-900 mb-12">How DevConnect Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {howItWorks.map((step, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border-2 border-gray-100 hover:border-violet-200 hover:ring-1 hover:ring-violet-200 hover:ring-opacity-50">
+              <div key={idx} className="bg-indigo-50 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border-2 border-indigo-100 hover:border-indigo-200 hover:ring-1 hover:ring-indigo-100">
                 <div className="w-16 h-16 mx-auto mb-6 text-3xl flex items-center justify-center">
                   {step.icon}
                 </div>
@@ -157,9 +160,16 @@ const HomeLanding = () => {
           <h2 className="text-3xl font-bold text-gray-900 mb-12">What Our Community Says</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border-2 border-gray-100 hover:border-violet-200">
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-200 mr-4">
+              <div key={idx} className="relative bg-white p-8 rounded-2xl shadow-sm transition-all duration-300 border-2 border-gray-100 hover:shadow-md hover:border-purple-200">
+                <div className="absolute top-4 right-4 text-yellow-400">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className={i < testimonial.rating ? 'text-yellow-400' : 'text-gray-300'}>
+                      ★
+                    </span>
+                  ))}
+                </div>
+                <div className="flex items-start mb-6">
+                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-md mr-4 flex-shrink-0">
                     <img
                       src={`https://i.pravatar.cc/150?img=${testimonial.img}`}
                       alt={testimonial.author}
@@ -171,7 +181,10 @@ const HomeLanding = () => {
                     <div className="text-sm text-gray-500">{testimonial.role}</div>
                   </div>
                 </div>
-                <p className="text-gray-600 italic text-left">"{testimonial.quote}"</p>
+                <div className="relative pl-4">
+                  <span className="absolute left-0 top-0 text-4xl text-gray-300 -mt-2">"</span>
+                  <p className="text-gray-700 italic relative z-10 pl-2">{testimonial.quote}</p>
+                </div>
               </div>
             ))}
           </div>
