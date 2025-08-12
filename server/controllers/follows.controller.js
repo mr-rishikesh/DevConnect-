@@ -82,3 +82,33 @@ export const unfollow = async (req  , res) => {
     });
   }
 }
+
+export const getFollowersAndFollowee = async (req , res) => {
+     const {myId } = req.params;
+
+     try {
+
+      const following = await Follows.find({followerId : myId});
+      const followers = await Follows.find({followeeId : myId});
+
+    const   followerIds = followers.map(f => f.followerId);
+    const   followingIds = following.map(f => f.followeeId);
+
+      const followersUsers = await User.find({_id :{ $in: followerIds }})
+      const followingUsers = await User.find({_id : { $in: followingIds }})
+
+      res.status(201).json({
+        message : "sucess",
+        followers : followersUsers ,
+        following : followingUsers
+      })
+      
+     } catch (error) {
+     res.status(400).json({
+      message: "Internal Server Error ",
+      error,
+      err: error.message,
+    });
+      
+     }
+}
