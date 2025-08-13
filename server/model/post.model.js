@@ -29,7 +29,7 @@ const postSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    image: {
+    coverImg: {
         type: String,
         required: true
     },

@@ -1,5 +1,6 @@
 import Post from "../model/post.model.js";
 import cloudinary from "../lib/cloudinary.js";
+import mongoose from "mongoose";
 
 // Function takes the following parameters:
 // - title, description, content, tags
@@ -64,7 +65,7 @@ export const createPost = async (req, res) => {
       description: description.trim(),
       content: content.trim(),
       coverImg: coverImgSrc,
-      posterId: req.user.id,
+      posterId: req.user._id,
       tags: processedTags,
     });
 
@@ -122,7 +123,7 @@ export const getPosts = async (req, res) => {
         if (!req?.user?.id) {
           return res.status(401).json({ success: false, error: "Unauthorized" });
         }
-        filter.posterId = req.user.id;
+        filter.posterId = req.user._id;
       } else if (mongoose.Types.ObjectId.isValid(req.query.author)) {
         filter.posterId = req.query.author;
       } else {
@@ -226,7 +227,7 @@ export const deletePost = async (req, res) => {
       return res.status(404).json({ success: false, message: "Post not found" });
     }
 
-    if (req.user.id !== post.posterId.toString()) {
+    if (req.user._id !== post.posterId.toString()) {
       return res.status(403).json({ success: false, message: "You are not authorized to delete this post." });
     }
 
@@ -270,7 +271,7 @@ export const editPost = async (req, res) => {
       return res.status(404).json({ success: false, error: "Post not found" });
     }
 
-    if (req.user.id !== post.posterId.toString()) {
+    if (req.user._id !== post.posterId.toString()) {
       return res.status(403).json({ success: false, error: "You are not authorized to edit this post" });
     }
 
@@ -370,14 +371,19 @@ export const toggleUpvotePost = async (req, res) => {
       return res.status(404).json({ message: "Post not found" });
     }
 
-    const isUpvoted = post.upvotedBy.includes(req.user.id);
+    // Check if user has already upvoted
+    const userUpvoteIndex = post.upvotedBy?.findIndex(upvote => 
+      upvote.userId.toString() === req.user._id.toString()
+    ) ?? -1;
 
-    if (isUpvoted) {
-      post.upvotes--;
-      post.upvotedBy = post.upvotedBy.filter(userId => userId !== req.user.id);
+    if (userUpvoteIndex !== -1) {
+      // User has already upvoted, so remove the upvote
+      post.upvotes = Math.max(0, post.upvotes - 1);
+      post.upvotedBy.splice(userUpvoteIndex, 1);
     } else {
-      post.upvotes++;
-      post.upvotedBy.push(req.user.id);
+      // User hasn't upvoted yet, so add their upvote
+      post.upvotes = (post.upvotes ?? 0) + 1;
+      post.upvotedBy = [...(post.upvotedBy ?? []), { userId: req.user._id }];
     }
 
     await post.save();
@@ -386,7 +392,12 @@ export const toggleUpvotePost = async (req, res) => {
     const postObj = post.toObject();
     delete postObj.upvotedBy;
 
-    res.status(200).json({ success: true, message: isUpvoted ? "Post upvote removed" : "Post upvoted successfully", post: postObj });
+    const wasUpvoted = userUpvoteIndex !== -1;
+    res.status(200).json({ 
+      success: true, 
+      message: wasUpvoted ? "Post upvote removed" : "Post upvoted successfully", 
+      post: postObj 
+    });
   } catch (error) {
     console.error("Failed to toggle upvote the post due to following error:", error);
     res.status(500).json({ success: false, error: "Internal server error" });
