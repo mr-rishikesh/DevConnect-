@@ -1,14 +1,21 @@
 import express from "express"
-import { createPost, feed, myPosts , likePost } from "../controllers/post.controller.js";
+import { createPost, getPosts, getPostById, deletePost, toggleUpvotePost } from "../controllers/post.controller.js";
 import { protectRoute } from "../middleware/auth.middleware.js";
-
+import upload from "../lib/upload.js";
 
 const postRouter = express.Router();
 
-postRouter.get("/get-feed", protectRoute , feed)
-postRouter.get("/my-posts" , myPosts)
-postRouter.post("/create-post" , createPost)
-postRouter.post("/like-post" , likePost)
+// create and get posts
+postRouter.post("/create-post", protectRoute, upload.single("coverImg"), createPost)
+postRouter.get("/", protectRoute, getPosts)
+postRouter.get("/:id", protectRoute, getPostById)
+
+// delete and edit functionality
+postRouter.delete("/delete/:id", protectRoute, deletePost)
+postRouter.put("/edit/:id", protectRoute, upload.single("coverImg"), editPost)
+
+// handle upvote logic
+postRouter.put("/toggleUpvote", protectRoute, toggleUpvotePost)
 
 
 export default postRouter
