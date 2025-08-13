@@ -1,5 +1,5 @@
 import express from "express"
-import { createPost, getPosts, getPostById, deletePost, toggleUpvotePost } from "../controllers/post.controller.js";
+import { createPost, getPosts, getPostById, deletePost, toggleUpvotePost, editPost } from "../controllers/post.controller.js";
 import { protectRoute } from "../middleware/auth.middleware.js";
 import upload from "../lib/upload.js";
 
@@ -15,7 +15,7 @@ postRouter.delete("/delete/:id", protectRoute, deletePost)
 postRouter.put("/edit/:id", protectRoute, upload.single("coverImg"), editPost)
 
 // handle upvote logic
-postRouter.put("/toggleUpvote", protectRoute, toggleUpvotePost)
+postRouter.put("/toggle-upvote/:id", protectRoute, toggleUpvotePost)
 
 
 export default postRouter
