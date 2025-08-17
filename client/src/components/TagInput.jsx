@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export default function TagInput({onInputChange , tags , setTags}) {
- 
+export default function TagInput({ onInputChange, tags, setTags }) {
+
   const [input, setInput] = useState("");
 
   const handleKeyDown = (e) => {
@@ -12,21 +12,21 @@ export default function TagInput({onInputChange , tags , setTags}) {
       }
       setInput("");
     }
-  
 
-  
+
+
   };
 
   const removeTag = (indexToRemove) => {
     setTags(tags.filter((_, index) => index !== indexToRemove));
-    
- 
+
+
   };
 
   return (
     <div className="w-full max-w-lg p-4  rounded-lg shadow-md bg-gray-100  border-gray-300 dark:bg-gray-700">
       <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-       Tech Stack / Skill 
+        Tech Stack / Skill
       </label>
 
       <div className="flex flex-wrap items-center gap-2 ">

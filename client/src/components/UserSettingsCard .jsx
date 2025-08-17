@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent } from 'react';
 
-const UserSettingsCard= () => {
+const UserSettingsCard = () => {
   const [avatar, setAvatar] = useState('https://i.pravatar.cc/100'); // default avatar
   const [status, setStatus] = useState(false);
   const [roles, setRoles] = useState({
@@ -56,7 +56,7 @@ const UserSettingsCard= () => {
       <div>
         <p className="text-sm font-medium mb-2">Assign Role</p>
         <div className="flex gap-4 flex-wrap">
-          {(['administrator', 'member', 'viewer'] ).map(role => (
+          {(['administrator', 'member', 'viewer']).map(role => (
             <label key={role} className="inline-flex items-center gap-2 text-sm capitalize">
               <input
                 type="checkbox"

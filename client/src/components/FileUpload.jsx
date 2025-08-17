@@ -1,12 +1,12 @@
-import { useState , useRef } from "react";
+import { useState, useRef } from "react";
 
-export default function FileUpload({setImagePreview , imagePreview}) {
-  
-  
+export default function FileUpload({ setImagePreview, imagePreview }) {
+
+
   const fileInputRef = useRef(null);
 
 
-    const handleImageChange = (e) => {
+  const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (!file.type.startsWith("image/")) {
       toast.error("Please select an image file");
@@ -18,9 +18,9 @@ export default function FileUpload({setImagePreview , imagePreview}) {
       setImagePreview(reader.result);
     };
     reader.readAsDataURL(file);
-     if (fileInputRef.current) fileInputRef.current.value = "";
+    if (fileInputRef.current) fileInputRef.current.value = "";
 
-   
+
 
 
   };
