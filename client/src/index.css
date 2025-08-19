@@ -1,4 +1,35 @@
 @tailwind base;
 @tailwind components;
-
 @tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-white text-gray-900 transition-colors duration-200;
+  }
+
+  .dark body {
+    @apply bg-gray-900 text-white;
+  }
+}
+
+/* Add your own CSS resets and utilities here if needed. */
+
+@layer base {
+  body {
+    background-color: #fff;
+    color: #111;
+    transition: background 0.2s, color 0.2s;
+  }
+  .dark body {
+    background-color: #18181b;
+    color: #f3f4f6;
+  }
+}
