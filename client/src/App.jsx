@@ -2,11 +2,14 @@ import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { Navigate } from "react-router-dom";
 
+
 // ------------- Components ------------- 
 import { useAuthStore } from "./store/useAuthStore";
 import { Toaster } from "react-hot-toast";
 import { Loader } from "lucide-react";
 import { initFlowbite } from 'flowbite';
+import { ThemeProvider } from "./context/ThemeContext";
+
 
 
 // ------------- Layout ------------- 
@@ -35,12 +38,14 @@ import About from "./pages/About";
 function Layout() {
   return (
     <>
-      <Navbar />
-      <main className="min-h-screen">
-        <Outlet />
-      </main>
-      <Footer />
-      <Toaster />
+      <ThemeProvider>
+        <Navbar />
+        <main className="min-h-screen">
+          <Outlet />
+        </main>
+        <Footer />
+        <Toaster />
+      </ThemeProvider>
     </>
   );
 }
@@ -63,8 +68,6 @@ function App() {
       </div>
     )
   }
-
-
 
   return (
     <>
@@ -90,6 +93,7 @@ function App() {
       </BrowserRouter>
     </>
   )
+
 
 }
 

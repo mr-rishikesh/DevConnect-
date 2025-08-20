@@ -79,7 +79,7 @@ const HomeLanding = () => {
 
 
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-gray-900 transition-colors">
       {/* Hero Section */}
       <section className="text-center px-6 py-24 max-w-6xl mx-auto">
 
@@ -87,11 +87,11 @@ const HomeLanding = () => {
           <span className="mr-2 bg-indigo-600 text-white px-2.5 py-1 rounded-full text-xs font-bold">🚀</span>
           Welcome to DevConnect!
         </div>
-        <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+        <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
           <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Build. Brag. Belong.</span><br />
 
         </h1>
-        <p className="text-gray-600 max-w-2xl mx-auto text-xl">
+        <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-xl">
           The ultimate platform for developers to showcase their work, connect with peers, and build amazing projects together.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
@@ -111,10 +111,10 @@ const HomeLanding = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-6 text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Everything You Need to Grow as a Developer</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">Join a thriving community of developers building the future together</p>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Everything You Need to Grow as a Developer</h2>
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Join a thriving community of developers building the future together</p>
         </div>
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((f, i) => {
@@ -123,13 +123,13 @@ const HomeLanding = () => {
             return (
               <div
                 key={i}
-                className="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border-2 border-gray-100 hover:border-indigo-200 hover:ring-1 hover:ring-indigo-100"
+                className="group bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border-2 border-gray-100 dark:border-gray-700 hover:border-indigo-200 dark:hover:border-indigo-500 hover:ring-1 hover:ring-indigo-100 dark:hover:ring-indigo-500"
               >
                 <div className="w-14 h-14 mb-6 rounded-xl flex items-center justify-center text-2xl bg-indigo-50 text-indigo-600">
                   {f.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{f.title}</h3>
-                <p className="text-gray-600">{f.desc}</p>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{f.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">{f.desc}</p>
               </div>
             )
           })}
@@ -137,9 +137,9 @@ const HomeLanding = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-gray-50 text-center">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800 text-center">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12">How DevConnect Works</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12">How DevConnect Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {howItWorks.map((step, idx) => (
               <div key={idx} className="bg-indigo-50 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border-2 border-indigo-100 hover:border-indigo-200 hover:ring-1 hover:ring-indigo-100">

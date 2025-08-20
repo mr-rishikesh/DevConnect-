@@ -13,7 +13,7 @@ export const useAuthStore = create((set, get) => ({
     isSigningIn: false,
     isforgetPasswordPage: false,
     isVerifyingOtp: false,
-
+    isSigningOut: false,
 
     forgetPassowrd: async (data) => {
 
@@ -90,6 +90,18 @@ export const useAuthStore = create((set, get) => ({
     },
 
 
-
-
+    signout: async () => {
+        try {
+            set({ isSigningOut: true });
+            await axiosInstance.post("/auth/signout");
+            set({ authUser: null });
+            set({ allUsers: null });
+            toast.success("Successfully signed out");
+        } catch (error) {
+            console.log("Error signing out:", error);
+            toast.error("Error signing out");
+        } finally {
+            set({ isSigningOut: false });
+        }
+    }
 }))

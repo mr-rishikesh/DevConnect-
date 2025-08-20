@@ -1,9 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import { useAuthStore } from "../../store/useAuthStore.js";
 import { useState } from "react";
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
-  const { authUser } = useAuthStore();
+  const { authUser, signout } = useAuthStore();
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isMobileOpen, setMobileOpen] = useState(false);
 
@@ -22,7 +23,10 @@ const Navbar = () => {
         </Link>
 
         {/* Right Side Buttons */}
-        <div className="flex items-center md:order-2 space-x-3">
+        <div className="flex items-center md:order-2 space-x-2">
+          <div className="mr-2">
+            <ThemeToggle />
+          </div>
           {authUser ? (
             <div className="relative">
               <button
@@ -72,7 +76,10 @@ const Navbar = () => {
                       </Link>
                     </li>
                     <li>
-                      <button className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      <button 
+                        onClick={signout}
+                        className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
                         Sign out
                       </button>
                     </li>
