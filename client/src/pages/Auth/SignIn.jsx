@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuthStore } from "../store/useAuthStore";
+import { useAuthStore } from "../../store/useAuthStore";
 import { Loader2 } from "lucide-react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";

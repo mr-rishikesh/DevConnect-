@@ -1,32 +1,49 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+import { Navigate } from "react-router-dom";
 
-import "./App.css";
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
-
-import HomeLanding from "./components/HomeLanding";
-import SignIn from "./pages/SignIn";
-import SignUp from "./pages/SignUp";
-import MessagePage from "./pages/MessagePage";
-
-
+// ------------- Components ------------- 
 import { useAuthStore } from "./store/useAuthStore";
 import { Toaster } from "react-hot-toast";
-
 import { Loader } from "lucide-react";
-import { Navigate } from "react-router-dom";
-import Profile from "./pages/Profile";
-import Navbar from "./components/Navbar";
-import Post from "./components/Post";
-import CreatePost from "./components/CreatePost";
-
 import { initFlowbite } from 'flowbite';
+
+
+// ------------- Layout ------------- 
+import Navbar from "./components/Navbar";
+import Footer from "./pages/Footer";
+
+
+
+
+// ------------- Pages ------------- 
+// Auth Pages 
+import SignUp from "./pages/Auth/SignUp";
+import SignIn from "./pages/Auth/SignIn";
+
+// Normal pages
 import { Home } from "./pages/Home";
+import HomeLanding from "./components/HomeLanding";
+import MessagePage from "./pages/MessagePage";
 import Explore from "./pages/Explore";
 import PrivacyTerms from "./pages/PrivacyTerms";
 import ProfilePage from "./components/ProfilePage";
 import About from "./pages/About";
-import Footer from "./pages/Footer";
 
+
+// Layout component that includes Navbar, Footer and an Outlet
+function Layout() {
+  return (
+    <>
+      <Navbar />
+      <main className="min-h-screen">
+        <Outlet />
+      </main>
+      <Footer />
+      <Toaster />
+    </>
+  );
+}
 
 function App() {
 
@@ -52,28 +69,25 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
 
         <Routes>
+          <Route element={<Layout />}>
+            {/* Auth Routes */}
+            <Route path="/signin" element={authUser ? <Navigate to="/home" /> : <SignIn />} />
+            <Route path="/signup" element={authUser ? <Navigate to="/home" /> : <SignUp />} />
 
-          {/* Auth Routes */}
-          <Route path="/signin" element={authUser ? <Navigate to="/home" /> : <SignIn />} />
-          <Route path="/signup" element={authUser ? <Navigate to="/home" /> : <SignUp />} />
-
-          {/* Main Routes */}
-          <Route path="/" element={<HomeLanding />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/privacyTerms" element={<PrivacyTerms />} />
-          <Route path="/messages" element={authUser ? <MessagePage /> : <Navigate to="/signin" />} />
-          <Route path="/home" element={authUser ? <Home /> : <Navigate to="/signin" />} />
-          <Route path="/explore" element={authUser ? <Explore /> : <Navigate to="/signin" />} />
+            {/* Main Routes */}
+            <Route path="/" element={<HomeLanding />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/privacyTerms" element={<PrivacyTerms />} />
+            <Route path="/messages" element={authUser ? <MessagePage /> : <Navigate to="/signin" />} />
+            <Route path="/home" element={authUser ? <Home /> : <Navigate to="/signin" />} />
+            <Route path="/explore" element={authUser ? <Explore /> : <Navigate to="/signin" />} />
+          </Route>
         </Routes>
 
-
       </BrowserRouter>
-      <Footer />
-      <Toaster />
     </>
   )
 

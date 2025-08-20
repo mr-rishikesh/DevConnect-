@@ -1,6 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { useAuthStore } from "../store/useAuthStore";
+import { useAuthStore } from "../../store/useAuthStore";
 import {
   Eye,
   EyeOff,
@@ -11,7 +11,7 @@ import {
   User,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import TagInput from "../components/TagInput";
+import TagInput from "../../components/TagInput";
 function SignUp() {
   const [formData, setFormData] = useState({
     fullName: "",
