@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { useAuthStore } from "../store/useAuthStore";
-import profileImage from "../assets/like-button-icon.webp"
+import { useAuthStore } from "../../store/useAuthStore";
 
 export default function Profile() {
   const [openSettings, setOpenSettings] = useState(false);
-  const {authUser} = useAuthStore();
+  const { authUser } = useAuthStore();
 
   return (
     <div className="min-h-screen bg-gray-200 p-8">
@@ -62,7 +61,7 @@ export default function Profile() {
         </div>
 
         <div className="flex flex-col items-center -mt-20">
-          <img src={authUser.profilePic ?authUser.profilePic :  "https://freesvg.org/img/abstract-user-flat-4.png" } alt="Profile" className="w-40 h-40 object-cover border-4 border-white rounded-full" />
+          <img src={authUser.profilePic ? authUser.profilePic : "https://freesvg.org/img/abstract-user-flat-4.png"} alt="Profile" className="w-40 h-40 object-cover border-4 border-white rounded-full" />
           <div className="flex items-center space-x-2 mt-2">
             <p className="text-2xl font-semibold">{authUser ? authUser.fullName : ""}</p>
             <span className="bg-blue-500 rounded-full p-1" title="Verified">
@@ -103,11 +102,11 @@ export default function Profile() {
               <span className="font-bold w-32">Full name:</span>
               <span className="text-gray-700">{authUser.fullName}</span>
             </li>
-             <li className="flex border-b py-2">
+            <li className="flex border-b py-2">
               <span className="font-bold w-32">Email:</span>
               <span className="text-gray-700">{authUser.email}</span>
             </li>
-              <li className="flex border-b py-2">
+            <li className="flex border-b py-2">
               <span className="font-bold w-32">Age:</span>
               <span className="text-gray-700">{authUser.age}</span>
             </li>
@@ -123,7 +122,7 @@ export default function Profile() {
               <span className="font-bold w-32">Location:</span>
               <span className="text-gray-700">{authUser.city}</span>
             </li>
-           
+
           </ul>
         </div>
       </div>

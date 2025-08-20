@@ -1,7 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
-import { useAuthStore } from "../store/useAuthStore.js";
+import { useAuthStore } from "../../store/useAuthStore.js";
 import { useState } from "react";
-import logo from "../assets/logo.png";
 import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
@@ -13,11 +12,11 @@ const Navbar = () => {
   const toggleMobileMenu = () => setMobileOpen(!isMobileOpen);
 
   return (
-    <nav className="absolute top-0 left-0 w-full z-50 bg-gray-900 border-b border-gray-400">
+    <nav className="sticky top-0 left-0 w-full z-50 bg-gray-900 border-b border-gray-400">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-3">
-          <img src={logo} className="h-8" alt="Logo" />
+          <img src="/assets/logo.png" className="h-8" alt="Logo" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
             DevConnect
           </span>

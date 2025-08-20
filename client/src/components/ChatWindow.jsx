@@ -32,9 +32,8 @@ const ChatWindow = ({ activeChat }) => {
           <div>
             <h2 className="text-sm font-semibold text-gray-900 dark:text-white">{activeChat.name}</h2>
             <span
-              className={`text-xs ${
-                activeChat.online ? "text-green-500" : "text-gray-400"
-              }`}
+              className={`text-xs ${activeChat.online ? "text-green-500" : "text-gray-400"
+                }`}
             >
               {activeChat.online ? "Online" : "Offline"}
             </span>
@@ -52,11 +51,10 @@ const ChatWindow = ({ activeChat }) => {
             className={`flex ${msg.fromSelf ? "justify-end" : "justify-start"}`}
           >
             <div
-              className={`max-w-xs px-4 py-2 rounded-lg text-sm transition-all duration-300 hover:scale-[1.02] ${
-                msg.fromSelf
+              className={`max-w-xs px-4 py-2 rounded-lg text-sm transition-all duration-300 hover:scale-[1.02] ${msg.fromSelf
                   ? "bg-blue-500 text-white"
                   : "bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white"
-              }`}
+                }`}
             >
               <p>{msg.text}</p>
               <span className="block text-[10px] text-right mt-1 text-gray-400 dark:text-gray-500">

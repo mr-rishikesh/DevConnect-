@@ -5,7 +5,7 @@ import { faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-6 mt-50 h-60">
-       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 h-3/4">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-4 h-3/4">
         {/* Logo & Brand Name */}
         <div className="text-center md:text-left">
           <h2 className="text-2xl font-bold hover:text-amber-400">DevConnect</h2>

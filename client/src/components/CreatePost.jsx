@@ -1,6 +1,5 @@
 import { useState } from "react";
 import TagInput from "./TagInput.jsx";
-import FileUpload from "./FileUpload.jsx";
 import toast from "react-hot-toast";
 import { usePostStore } from "../store/usePostStore.js";
 import { useAuthStore } from "../store/useAuthStore.js";
@@ -8,49 +7,49 @@ import { useAuthStore } from "../store/useAuthStore.js";
 
 export default function CreatePost() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [image , setImage] = useState(null);
+  const [image, setImage] = useState(null);
 
-  const [title , setTitle] = useState(null);
-  const [description , setDescription] = useState(null);
-  const[tag , setTag] = useState([]);
-  const {createPost} = usePostStore();
- const {authUser} = useAuthStore();
-   
+  const [title, setTitle] = useState(null);
+  const [description, setDescription] = useState(null);
+  const [tag, setTag] = useState([]);
+  const { createPost } = usePostStore();
+  const { authUser } = useAuthStore();
+
   const handleSubmit = async () => {
-    if(!title) return  toast.error("Title must Required")
-    if(!description) return  toast.error("Description must Required")
-      const id = authUser._id;
+    if (!title) return toast.error("Title must Required")
+    if (!description) return toast.error("Description must Required")
+    const id = authUser._id;
 
     try {
 
       await createPost({
-        id , 
-        
-        image ,
-        tags : tag ,
-        title ,
+        id,
+
+        image,
+        tags: tag,
+        title,
         description
 
       })
       setTag([]);
       setImage(null);
-      
-      
+
+
       setIsModalOpen(false)
-      
 
 
 
 
-      
+
+
     } catch (error) {
-      
+
     }
-  
+
   }
 
 
-  
+
 
 
 
@@ -105,32 +104,32 @@ export default function CreatePost() {
               </div>
 
               {/* Content */}
-          
 
-<form class="max-w-sm mx-auto my-5">
 
-   <div class="mb-5">
-      <label for="large-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title*</label>
-      <input type="text" onChange={(e) => setTitle(e.target.value)} id="large-input" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
-  </div>
-   <div class="mb-5">
-    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description*</label>
-  <textarea id="message" onChange={(e) => setDescription(e.target.value)} rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write Description here"></textarea>
-  </div>
-    <div class="mb-5">
-   <TagInput   tags={tag} setTags={setTag}/>
-   <FileUpload setImagePreview={setImage} imagePreview={image}/>
-  </div>
- 
+              <form class="max-w-sm mx-auto my-5">
 
- 
-</form>
+                <div class="mb-5">
+                  <label for="large-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title*</label>
+                  <input type="text" onChange={(e) => setTitle(e.target.value)} id="large-input" class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                </div>
+                <div class="mb-5">
+                  <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description*</label>
+                  <textarea id="message" onChange={(e) => setDescription(e.target.value)} rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write Description here"></textarea>
+                </div>
+                <div class="mb-5">
+                  <TagInput tags={tag} setTags={setTag} />
+                  <FileUpload setImagePreview={setImage} imagePreview={image} />
+                </div>
+
+
+
+              </form>
 
 
               {/* Footer */}
               <div className="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
                 <button
-                 onClick={handleSubmit}
+                  onClick={handleSubmit}
                   type="button"
                   className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >

@@ -70,43 +70,43 @@ const About = () => {
 
       <div className='place-items-center grid sm:grid-rows-2 sm:grid-cols-1 md:grid-cols-2 md:grid-rows-1 lg:grid-rows-1 lg:grid-cols-2 gap-7 bg-blue-100 w-screen lg:pb-16 pb-8 pt-8'>
         <div className='lg:ml-10 md:ml-10 md:mr-10'>
-            <h2 className='text-center hover:text-amber-500 tracking-wide font-root-heading text-blue-600 font-extrabold lg:text-5xl sm:text-3xl sm:pt-5 md:pt-5 md:text-4xl pt-4 pb-10'>Why DevConnect?</h2>
-            <div className='place-items-center grid lg:grid-cols-3 lg:grid-rows-2 md:grid-cols-2 md:grid-rows-3 sm:grid-rows-6 sm:grid-cols-1 gap-5'>
-                <div className="bg-blue-50 p-6 rounded-lg shadow hover:shadow-lg transition">
-                    <h3 className="font-bold text-xl mb-2 text-blue-950">Share Your Journey</h3>
-                    <p>Post experiences, achievements, and milestones from your developement life.</p>
-                </div>
-            
-                <div className="bg-blue-50 p-6 rounded-lg shadow hover:shadow-lg transition">
-                    <h3 className="font-bold text-xl mb-2 text-blue-950">Showcase Projects</h3>
-                    <p>Display personal projects, GitHub repos, hackathon demos, and more — with media support.</p>
-                </div>
-            
-                <div className="bg-blue-50 p-6 rounded-lg shadow hover:shadow-lg transition">
-                    <h3 className="font-bold text-xl mb-2 text-blue-950">Team Formation</h3>
-                    <p>Find collaborators for hackathons, open-source, freelance gigs, or startup ideas.</p>
-                </div>
-            
-                <div className="bg-blue-50 p-6 rounded-lg shadow hover:shadow-lg transition">
-                    <h3 className="font-bold text-xl mb-2 text-blue-950">Resource Sharing</h3>
-                    <p>Contribute ans share tutorials, blogs, tools, or tips to help the community grow.</p>
-                </div>
-    
-                <div className="bg-blue-50 p-6 rounded-lg shadow hover:shadow-lg transition">
-                    <h3 className="font-bold text-xl mb-2 text-blue-950">Inclusive Community</h3>
-                    <p>Open to all — beginners to pros, across the globe and all tech domains.</p>
-                </div>
-
-                <div className="bg-blue-50 p-6 rounded-lg shadow hover:shadow-lg transition">
-                    <h3 className="font-bold text-xl mb-2 text-blue-950">Contribute Feed</h3>
-                    <p>Join active projects, find teammates, or request contributors — all in one place.</p>
-                </div>
+          <h2 className='text-center hover:text-amber-500 tracking-wide font-root-heading text-blue-600 font-extrabold lg:text-5xl sm:text-3xl sm:pt-5 md:pt-5 md:text-4xl pt-4 pb-10'>Why DevConnect?</h2>
+          <div className='place-items-center grid lg:grid-cols-3 lg:grid-rows-2 md:grid-cols-2 md:grid-rows-3 sm:grid-rows-6 sm:grid-cols-1 gap-5'>
+            <div className="bg-blue-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+              <h3 className="font-bold text-xl mb-2 text-blue-950">Share Your Journey</h3>
+              <p>Post experiences, achievements, and milestones from your developement life.</p>
             </div>
-        
+
+            <div className="bg-blue-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+              <h3 className="font-bold text-xl mb-2 text-blue-950">Showcase Projects</h3>
+              <p>Display personal projects, GitHub repos, hackathon demos, and more — with media support.</p>
+            </div>
+
+            <div className="bg-blue-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+              <h3 className="font-bold text-xl mb-2 text-blue-950">Team Formation</h3>
+              <p>Find collaborators for hackathons, open-source, freelance gigs, or startup ideas.</p>
+            </div>
+
+            <div className="bg-blue-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+              <h3 className="font-bold text-xl mb-2 text-blue-950">Resource Sharing</h3>
+              <p>Contribute ans share tutorials, blogs, tools, or tips to help the community grow.</p>
+            </div>
+
+            <div className="bg-blue-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+              <h3 className="font-bold text-xl mb-2 text-blue-950">Inclusive Community</h3>
+              <p>Open to all — beginners to pros, across the globe and all tech domains.</p>
+            </div>
+
+            <div className="bg-blue-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+              <h3 className="font-bold text-xl mb-2 text-blue-950">Contribute Feed</h3>
+              <p>Join active projects, find teammates, or request contributors — all in one place.</p>
+            </div>
+          </div>
+
         </div>
 
         <div className='w-36 h-28 md:w-80 md:h-52 lg:w-96 bg-center bg-cover lg:h-80 mr-8 ml-8 lg:mt-20 rounded-xl hover:scale-110' style={{ backgroundImage: "url('/devCommunity.png')" }}></div>
-    
+
       </div>
 
       {/*footer*/}
