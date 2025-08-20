@@ -1,5 +1,4 @@
 import React from 'react'
-import userImage from "../assets/user.png"
 import { usePostStore } from '../store/usePostStore'
 function ProfileCard({ user }) {
   const { handleFollow } = usePostStore();
@@ -13,7 +12,7 @@ function ProfileCard({ user }) {
     <li class="py-3 sm:py-4">
       <div class="flex items-center space-x-3 rtl:space-x-reverse">
         <div class="relative shrink-0">
-          <img class="w-8 h-8 rounded-full" src={user.profilePic != "" ? user.profilePic : userImage} alt="Neil image" />
+          <img class="w-8 h-8 rounded-full" src={user.profilePic != "" ? user.profilePic : "/assets/user.png"} alt="Neil image" />
           <span class="top-0 start-6 absolute w-3.5 h-3.5 bg-green-500 border-2 border-white dark:border-gray-800 rounded-full"></span>
           <span class="top-0 start-6 absolute w-3.5 h-3.5 bg-red-500 border-2 border-white dark:border-gray-800 rounded-full"></span>
 

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
-import profileImage from "../assets/like-button-icon.webp"
 
 export default function Profile() {
   const [openSettings, setOpenSettings] = useState(false);

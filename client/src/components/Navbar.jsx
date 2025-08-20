@@ -1,7 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore.js";
 import { useState } from "react";
-import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const { authUser } = useAuthStore();
@@ -16,7 +15,7 @@ const Navbar = () => {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-3">
-          <img src={logo} className="h-8" alt="Logo" />
+          <img src="/assets/logo.png" className="h-8" alt="Logo" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
             DevConnect
           </span>
