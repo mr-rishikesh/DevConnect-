@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { useAuthStore } from "../store/useAuthStore.js";
+import { useAuthStore } from "../../store/useAuthStore.js";
 import { useState } from "react";
 
 const Navbar = () => {

@@ -10,8 +10,8 @@ import { initFlowbite } from 'flowbite';
 
 
 // ------------- Layout ------------- 
-import Navbar from "./components/Navbar";
-import Footer from "./pages/Footer";
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
 
 
 

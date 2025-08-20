@@ -1,6 +1,5 @@
 import { useState } from "react";
 import TagInput from "./TagInput.jsx";
-import FileUpload from "./FileUpload.jsx";
 import toast from "react-hot-toast";
 import { usePostStore } from "../store/usePostStore.js";
 import { useAuthStore } from "../store/useAuthStore.js";
