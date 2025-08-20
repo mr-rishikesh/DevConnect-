@@ -49,37 +49,33 @@ function App() {
 
 
 
-  return (<>
+  return (
+    <>
+      <BrowserRouter>
+        <Navbar />
+
+        <Routes>
+
+          {/* Auth Routes */}
+          <Route path="/signin" element={authUser ? <Navigate to="/home" /> : <SignIn />} />
+          <Route path="/signup" element={authUser ? <Navigate to="/home" /> : <SignUp />} />
+
+          {/* Main Routes */}
+          <Route path="/" element={<HomeLanding />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/privacyTerms" element={<PrivacyTerms />} />
+          <Route path="/messages" element={authUser ? <MessagePage /> : <Navigate to="/signin" />} />
+          <Route path="/home" element={authUser ? <Home /> : <Navigate to="/signin" />} />
+          <Route path="/explore" element={authUser ? <Explore /> : <Navigate to="/signin" />} />
+        </Routes>
 
 
-
-
-
-
-
-    <BrowserRouter>
-      <Navbar />
-
-
-
-      <Routes>
-        <Route path="/signup" element={authUser ? <Navigate to="/home" /> : <SignUp />} />
-        <Route path="/" element={<HomeLanding />} />
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/privacyTerms" element={<PrivacyTerms />} />
-        <Route path="/signin" element={authUser ? <Navigate to="/home" /> : <SignIn />} />
-        <Route path="/messages" element={authUser ? <MessagePage /> : <Navigate to="/signin" />} />
-        <Route path="/home" element={authUser ? <Home /> : <Navigate to="/signin" />} />
-        {/* //   <Route path="/profile" element={authUser ?   <ProfilePage/>: <Navigate to="/signin" />} /> */}
-        <Route path="/explore" element={authUser ? <Explore /> : <Navigate to="/signin" />} />
-
-
-      </Routes>
-    </BrowserRouter>
-    <Footer />
-    <Toaster />
-  </>)
+      </BrowserRouter>
+      <Footer />
+      <Toaster />
+    </>
+  )
 
 }
 
