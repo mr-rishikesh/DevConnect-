@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-
+import { useEffect } from "react";
+import { ThemeProvider } from "./context/ThemeContext";
 import "./App.css";
 import {BrowserRouter , Routes , Route, useNavigate} from 'react-router-dom';
 
@@ -49,15 +49,10 @@ function App() {
  
  
 
-  return (<>
-   
-    
-   
-          
-        
-   
-    
-      <BrowserRouter>
+  return (
+    <ThemeProvider>
+      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
+        <BrowserRouter>
        <Navbar/>
       
      
@@ -76,10 +71,12 @@ function App() {
         
        
       </Routes>
-    </BrowserRouter> 
-    <Footer/>
-    <Toaster />
-    </>)
+        </BrowserRouter> 
+        <Footer/>
+        <Toaster />
+      </div>
+    </ThemeProvider>
+  )
   
 }
 
