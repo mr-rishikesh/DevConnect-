@@ -26,7 +26,7 @@ const ThemeToggle = () => {
         flex items-center justify-center 
         w-10 h-10 rounded-lg focus:outline-none 
         transition-colors duration-200
-        ${darkMode ? 'bg-gray-800' : 'bg-white'}
+        ${darkMode ? 'bg-gray-800' : 'bg-orange-50'}
       `}
       aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
     >
