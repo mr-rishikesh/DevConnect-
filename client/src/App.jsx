@@ -32,7 +32,8 @@ import Explore from "./pages/Explore";
 import PrivacyTerms from "./pages/PrivacyTerms";
 import ProfilePage from "./components/ProfilePage";
 import About from "./pages/About";
-
+import PageNotFound from "./pages/PageNotFound";
+import CreatePostPage from "./pages/CreatePostPage";
 
 // Layout component that includes Navbar, Footer and an Outlet
 function Layout() {
@@ -76,7 +77,7 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             {/* Auth Routes */}
-            <Route path="/signin" element={authUser ? <Navigate to="/home" /> : <SignIn />} />
+            <Route path="/login" element={authUser ? <Navigate to="/home" /> : <SignIn />} />
             <Route path="/signup" element={authUser ? <Navigate to="/home" /> : <SignUp />} />
 
             {/* Main Routes */}
@@ -84,9 +85,11 @@ function App() {
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/about" element={<About />} />
             <Route path="/privacyTerms" element={<PrivacyTerms />} />
-            <Route path="/messages" element={authUser ? <MessagePage /> : <Navigate to="/signin" />} />
-            <Route path="/home" element={authUser ? <Home /> : <Navigate to="/signin" />} />
-            <Route path="/explore" element={authUser ? <Explore /> : <Navigate to="/signin" />} />
+            <Route path="/messages" element={authUser ? <MessagePage /> : <Navigate to="/login" />} />
+            <Route path="/home" element={authUser ? <Home /> : <Navigate to="/login" />} />
+            <Route path="/create-post" element={authUser ? <CreatePostPage /> : <Navigate to="/login" />} />
+            <Route path="/explore" element={authUser ? <Explore /> : <Navigate to="/login" />} />
+            <Route path="*" element={<PageNotFound />} />
           </Route>
         </Routes>
 
