@@ -74,7 +74,7 @@ function SignUp() {
                     }}
                     name="fullName"
                     id="fullName"
-                    className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-accent-500 dark:focus:border-accent-500 transition-colors duration-200"
+                    className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 placeholder-gray-400 dark:text-white dark:focus:ring-accent-500 dark:focus:border-accent-500 transition-colors duration-200"
                     placeholder="Enter Name"
                     required=""
                   />
@@ -93,7 +93,7 @@ function SignUp() {
                     }}
                     name="email"
                     id="email"
-                    className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-accent-500 dark:focus:border-accent-500 transition-colors duration-200"
+                    className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 placeholder-gray-400 dark:text-white dark:focus:ring-accent-500 dark:focus:border-accent-500 transition-colors duration-200"
                     placeholder="name@company.com"
                     required=""
                   />
@@ -116,7 +116,7 @@ function SignUp() {
                     }}
                     name="githubUrl"
                     id="githubUrl"
-                    className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-accent-500 dark:focus:border-accent-500 transition-colors duration-200"
+                    className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 placeholder-gray-400 dark:text-white dark:focus:ring-accent-500 dark:focus:border-accent-500 transition-colors duration-200"
                     placeholder="Enter Github Url "
                     required=""
                   />
@@ -138,7 +138,7 @@ function SignUp() {
                     name="password"
                     id="password"
                     placeholder="••••••••"
-                    className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-accent-500 dark:focus:border-accent-500 transition-colors duration-200"
+                    className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 placeholder-gray-400 dark:text-white dark:focus:ring-accent-500 dark:focus:border-accent-500 transition-colors duration-200"
                     required=""
                   />
                 </div>

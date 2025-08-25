@@ -79,7 +79,7 @@ function SignIn() {
                                     onChange={(e) => { setFormData({ ...formData, email: e.target.value }) }}
                                     name="email"
                                     id="email"
-                                    className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-accent-500 dark:focus:border-accent-500 transition-colors duration-200"
+                                    className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 placeholder-gray-400 dark:text-white dark:focus:ring-accent-500 dark:focus:border-accent-500 transition-colors duration-200"
                                     placeholder="name@company.com"
                                     required
                                 />
@@ -96,7 +96,7 @@ function SignIn() {
                                         onChange={(e) => { setFormData({ ...formData, password: e.target.value }) }}
                                         id="password"
                                         placeholder="••••••••"
-                                        className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-500 block w-full p-2.5 pr-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-accent-500 dark:focus:border-accent-500 transition-colors duration-200"
+                                        className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-primary-500 block w-full p-2.5 pr-10 dark:bg-gray-700 dark:border-gray-600 placeholder-gray-400 dark:text-white dark:focus:ring-accent-500 dark:focus:border-accent-500 transition-colors duration-200"
                                         required
                                     />
                                     <button
