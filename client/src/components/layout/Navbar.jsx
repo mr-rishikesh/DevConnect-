@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useAuthStore } from "../../store/useAuthStore.js";
 import { useState } from "react";
-import ThemeToggle from './ThemeToggle';
+import ThemeToggle from '../ThemeToggle';
 
 const Navbar = () => {
   const { authUser, signout } = useAuthStore();
