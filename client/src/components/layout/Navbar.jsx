@@ -158,13 +158,13 @@ const Navbar = () => {
               <div className="flex space-x-3">
                 <Link
                   to="/login"
-                  className="px-4 py-2 text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 dark:bg-accent-600 dark:hover:bg-accent-700 dark:focus:ring-accent-500 transition-colors duration-200 shadow-sm rounded-md"
+                  className="px-4 py-2 text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none dark:bg-accent-600 dark:hover:bg-accent-700 transition-colors duration-200 shadow-sm rounded-md"
                 >
                   Log in
                 </Link>
                 <Link
                   to="/signup"
-                  className="px-4 py-2 text-sm font-medium text-primary-700 bg-primary-50 dark:bg-secondary-800 dark:text-accent-100 rounded-md hover:bg-primary-100 dark:hover:bg-secondary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 dark:focus:ring-accent-500 transition-colors duration-200 border border-primary-200 dark:border-secondary-700"
+                  className="px-4 py-2 text-sm font-medium text-primary-700 bg-primary-50 dark:bg-secondary-800 dark:text-accent-100 rounded-md hover:bg-primary-100 dark:hover:bg-secondary-700 focus:outline-none transition-colors duration-200 border border-primary-200 dark:border-secondary-700"
                 >
                   Sign up
                 </Link>
